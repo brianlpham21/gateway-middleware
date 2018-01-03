@@ -8,7 +8,7 @@ You need to create a piece of middleware that parses request for a header with t
 
 The middleware will need to parse the value for this request header, and then attempt to find a user object for the user with that username and password. If the user is located, its object should be added to the request as `req.user`. If not, `req.user` will be undefined.
 
-This app has a single endpoint, `/api/users/me`, which is meant to return the first name, last name, user name, id, and position (aka job title) of an authenticated user. Your middleware will support that endpoint, which looks like this:
+This application has a single endpoint, `/api/users/me`, which is meant to return the first name, last name, user name, id, and position (aka job title) of an authenticated user. Your middleware will support that endpoint, which looks like this:
 
 ```javascript
 
@@ -34,4 +34,3 @@ In order to parse the request header, you will need to use the `query-string` pa
 ```
 
 So in your middlware, you'll need to use it to get an object with the `user` and `pass` from the request header `x-username-and-password` (if this request header was sent at all!).
-
